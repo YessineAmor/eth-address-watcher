@@ -1,5 +1,8 @@
 # Eth Address Watcher
 
+## Install
+Install dependencies using `npm i`
+
 ## Execution
 Run using `npm run minter YOUR_ADDRESS`
 
