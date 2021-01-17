@@ -26,7 +26,6 @@ export function handleFiles(): [number, number, WriteStream] {
     let latestBlockNumber = 0;
     let latestTransactionIndex = 0;
     let outputWs = fs.createWriteStream('OUTPUT.txt', { flags: 'a' });
-    console.log(outputWs);
     if (fs.existsSync('log.txt')) {
         let logContents = fs.readFileSync('log.txt');
         if (logContents.toString().length > 0) {
