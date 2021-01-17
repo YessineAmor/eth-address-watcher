@@ -50,22 +50,22 @@ afterEach(() => {
     jest.clearAllMocks();
 });
 
-test('Read address to watch', () => {
+test('Should read address to watch', () => {
     const addressToWatch = '0xe206E5Cb1fc643908A75906Af6F919a487Af76AC';
-    process.argv.pop();
     process.argv.push(addressToWatch);
     expect(getAddressToWatch()).toEqual(addressToWatch);
+    process.argv.pop();
 })
 
 test("Exit if not able to read address to watch", () => {
-    process.argv.pop();
+    // process.argv.pop();
     expect(() => getAddressToWatch()).toThrow('One argument containing the address to watch is required');
 })
 
 test("Exit if address to watch is not valid eth address", () => {
     process.argv.push('invalid eth address');
     expect(() => getAddressToWatch()).toThrow('Please input a valid Ethereum address');
-
+    process.argv.pop();
 })
 
 test('Call axios to get transactions from Etherscan API', async () => {
